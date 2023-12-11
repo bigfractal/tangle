@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:6000/tangle
+    username: website
+    password: Web8gopher!
+    driverClassName: org.postgresql.Driver

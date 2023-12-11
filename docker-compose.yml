@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 6000:5432
+    environment:
+      POSTGRES_USER: website
+      POSTGRES_PASSWORD: Web8gopher!
+      POSTGRES_DB: tangle
