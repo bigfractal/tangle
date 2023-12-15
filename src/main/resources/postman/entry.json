@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "064bf63f-a7e3-40eb-bfdf-aa38f6a94294",
+		"name": "entry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30314652"
+	},
+	"item": [
+		{
+			"name": "entryList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apiHost}}:{{apiPort}}/api/v1/entry/entryList",
+					"protocol": "http",
+					"host": [
+						"{{apiHost}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"api",
+						"v1",
+						"entry",
+						"entryList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entryBean",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apiHost}}:{{apiPort}}/api/v1/entry/entryBean/key/sun-also-rises",
+					"protocol": "http",
+					"host": [
+						"{{apiHost}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"api",
+						"v1",
+						"entry",
+						"entryBean",
+						"key",
+						"sun-also-rises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entryBean",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/entry/entryBean/key/sun-also-rises",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"entry",
+						"entryBean",
+						"key",
+						"sun-also-rises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entryBean",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"sun-also-rises\",\n    \"author\": \"Hemingway\",\n    \"title\": \"The Sun Also Rises\",\n    \"body\": \"You can't get away from yourself\"\n}"
+				},
+				"url": {
+					"raw": "http://{{apiHost}}:{{apiPort}}/api/v1/entry/entryBean",
+					"protocol": "http",
+					"host": [
+						"{{apiHost}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"api",
+						"v1",
+						"entry",
+						"entryBean"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entryBean",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"key\": \"sun-also-rises\",\n    \"author\": \"Hemingway\",\n    \"title\": \"The Sun Also Rises\",\n    \"body\": \"Changed value\"\n}"
+				},
+				"url": {
+					"raw": "http://{{apiHost}}:{{apiPort}}/api/v1/entry/entryBean",
+					"protocol": "http",
+					"host": [
+						"{{apiHost}}"
+					],
+					"port": "{{apiPort}}",
+					"path": [
+						"api",
+						"v1",
+						"entry",
+						"entryBean"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

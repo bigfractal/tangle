@@ -1,5 +1,6 @@
 services:
-  postgres:
+  tangleDb:
+    container_name: tangleDb
     image: postgres
     ports:
       - 6000:5432
@@ -7,3 +8,15 @@ services:
       POSTGRES_USER: website
       POSTGRES_PASSWORD: Web8gopher!
       POSTGRES_DB: tangle
+  tangleApp:
+    container_name: tangleApp
+    image: bigfractal/tangle
+    ports:
+    - 8080:8080
+    depends_on:
+    - tangleDb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://tangleDb:5432/tangle
+      - SPRING_DATASOURCE_USERNAME=website
+      - SPRING_DATASOURCE_PASSWORD=Web8gopher!
+
