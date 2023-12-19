@@ -1,7 +1,7 @@
 Feature: navTemplate
 
   Scenario: open website
-    When user navigates to "http://localhost:8080"
+    When user opens website
     Then page contains element with id "appTitle"
     And page contains link with text "Login"
 
@@ -22,6 +22,6 @@ Feature: navTemplate
     Then view contains header with text "Login"
 
   Scenario: home view
-    When user clicks link with id "appLogo"
-    Then view contains header with text "Welcome"
+    When user clicks link with id "appTitle"
+    Then view contains header with text "About"
 
