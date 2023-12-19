@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo
+echo Starting ...
+echo
+pushd $BF
+
+docker compose up
+
+popd

@@ -7,6 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../target/classes/static'),
         filename: 'bundle.js',
+        publicPath: '/',
+        assetModuleFilename: 'images/[name][ext]',
     },
     devServer: {
         port: 3000,
@@ -32,7 +34,10 @@ module.exports = {
                     }
                 }
             },
-
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
     plugins: [new HtmlWebpackPlugin( {

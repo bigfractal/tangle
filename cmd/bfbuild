@@ -1,0 +1,16 @@
+#! /bin/bash
+
+echo
+echo Building ...
+echo
+pushd $BF
+
+mvn clean
+
+cd web
+npm run build
+cd ..
+
+mvn package -DskipTests
+
+popd
