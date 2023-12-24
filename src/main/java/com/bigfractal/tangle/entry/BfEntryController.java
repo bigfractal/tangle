@@ -1,19 +1,20 @@
 package com.bigfractal.tangle.entry;
 
 import com.bigfractal.tangle.env.BfConstants;
-import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.ResourcePatternUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,10 +23,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
+import static java.util.stream.Collectors.toList;
 
 @RestController
 @Transactional
@@ -43,13 +43,20 @@ public class BfEntryController implements BfConstants {
         if ( entryRepo.count() > 0  ) return;
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Resource resource = resourceLoader.getResource( "classpath:" + CONTENT_DIR );
-        File aDir = resource.getFile();
-        File[] aFileList = aDir.listFiles();
-        if ( aFileList == null ) return;
 
-        for( File aFile : aFileList ) {
-            String json = FileUtils.readFileToString( aFile, StandardCharsets.UTF_8 );
+        Resource[] resources = ResourcePatternUtils
+                .getResourcePatternResolver(resourceLoader)
+                .getResources("classpath*:content/entries/*.json" );
+
+        List<String> aFileList = Arrays.stream(resources)
+                .map( Resource::getFilename )
+                .sorted()
+                .toList();
+
+        for( String aSpec : aFileList ) {
+            ClassPathResource classPathResource = new ClassPathResource( CONTENT_DIR + "/" + aSpec );
+            byte[] data = FileCopyUtils.copyToByteArray(classPathResource.getInputStream());
+            String json = new String(data, StandardCharsets.UTF_8);
             BfEntry entry = objectMapper.readValue( json, BfEntry.class );
             entryRepo.save( entry );
         }
