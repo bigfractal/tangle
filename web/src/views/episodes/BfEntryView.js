@@ -6,12 +6,13 @@ import BfEntrySidebar from "./BfEntrySidebar";
 
 export default function BfEntryView( { entryKey } ) {
     return (
-        <div className="bg-purple-300">
-            EntryView: { entryKey }
-
-            <BfEntryNav />
-            <BfEntry />
-            <BfEntrySidebar />
-        </div>
+        <section className="pt-1 pb-1">
+            <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
+                <div className="flex flex-wrap gap-7.5">
+                    <BfEntry entryKey={ entryKey } />
+                    <BfEntrySidebar />
+                </div>
+            </div>
+        </section>
     );
 }

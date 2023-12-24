@@ -2,7 +2,7 @@
   "key": "tangle-017",
   "title": "Tangle 17 - Selenium, React Router",
   "author": "teefal",
-  "postStamp": "2023-12-20 06:00:00",
+  "postStamp": "2023-12-20 6:00",
   "thumb": "https://i.ytimg.com/vi/_AC0tjyfJcw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWwEWKx89Hw9FooEZJbMCS7mqq8w",
   "body": "Selenium, the automated testing for web browsers, is introduced while wiring up Gherkin for our first UX story. We then explore React and its wiring tool Router to enable switching views in the nav.",
   "youtube": "https://youtu.be/_AC0tjyfJcw"

@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "../../images/tangleLogo.png";
+import {useNavigate} from "react-router-dom";
+import {Button} from "primereact/button";
 
 export default function BfNav() {
+    const navigate = useNavigate();
     return (
 <>
         <header class="flex-auto w-full z-9999 bg-white py-7 lg:py-0 transition-all ease-in-out duration-300">
             <div class="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0 lg:flex items-center justify-between relative">
                 <div class="max-w-sm lg:w-3/12 flex items-center justify-between">
-                    <a id="appTitle" href="/"> <img src="/images/tangleLogo.png" alt="Logo"/> </a>
+                    <Button link id="appTitle" onClick={ () => navigate( "/" ) }> <img src="/images/tangleLogo.png" alt="Logo"/> </Button>
 
                     <button id="menuToggler" aria-label="button for menu toggle" class="bg-red-500 lg:hidden block">
                       <span class="block relative cursor-pointer w-5.5 h-5.5">
@@ -37,16 +40,16 @@ export default function BfNav() {
                         <ul class="flex lg:items-center flex-col lg:flex-row gap-5 lg:pl-6 lg:gap-10">
 
                             <li className="nav__menu lg:py-6.5">
-                                <a href="/" className="hover:text-dark">About</a>
+                                <Button link onClick={ () => navigate( "/" ) } className="hover:text-dark">About</Button>
                             </li>
                             <li className="nav__menu lg:py-6.5">
-                                <a href="/episodes" className="hover:text-dark">Episodes</a>
+                                <Button link onClick={ () => navigate( "/episodes" ) } className="hover:text-dark">Episodes</Button>
                             </li>
                             <li class="nav__menu lg:py-6.5">
-                                <a href="/signup" class="hover:text-dark">Signup</a>
+                                <Button link onClick={ () => navigate( "/signup" ) } class="hover:text-dark">Signup</Button>
                             </li>
                             <li className="nav__menu lg:py-6.5">
-                                <a href="/login" className="hover:text-dark">Login</a>
+                                <Button link onClick={ () => navigate( "/login" ) } className="hover:text-dark">Login</Button>
                             </li>
                         </ul>
                     </nav>

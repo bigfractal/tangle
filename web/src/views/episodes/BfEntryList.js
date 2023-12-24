@@ -18,6 +18,13 @@ export default function BfEntryList() {
     }
 
     return (
-        <DataView value={entryList} itemTemplate={ itemTemplate }  />
+        <div className="mb-3 text-center">
+            <h2 className="text-dark mb-3.5 text-2xl font-bold sm:text-4xl xl:text-heading-3">
+                Episodes
+            </h2>
+            <p>New episodes air every Monday, Wednesday, and Friday at 6am GMT</p>
+
+            <DataView value={entryList} itemTemplate={ itemTemplate }  />
+        </div>
     );
 }

@@ -39,7 +39,7 @@ public class BfNavTemplateFeature implements BfConstants {
 
     @When("user clicks link with text {string}")
     public void userClicksLinkWithText(String pText) {
-        WebElement element = driver().findElement( By.partialLinkText( pText ) );
+        WebElement element = driver().findElement( By.linkText( pText ) );
         element.click();
     }
 

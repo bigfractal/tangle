@@ -51,7 +51,7 @@ public class BfEntryController implements BfConstants {
     }
 
     @GetMapping( API_ENTRY_LIST )
-    public Collection<BfEntry> doGetEntryList() {
+    public List<BfEntry> doGetEntryList() {
         return entryRepo.findAll( Sort.by( Sort.Direction.ASC, "key" ) );
     }
 
@@ -60,6 +60,37 @@ public class BfEntryController implements BfConstants {
         Optional<BfEntry> entryOpt = entryRepo.findByKey( pKey );
         return entryOpt.map( response -> ResponseEntity.ok().body( response ))
                        .orElse( ResponseEntity.notFound().build() );
+    }
+
+    @GetMapping( API_PREV_ENTRY_KEY )
+    public ResponseEntity<String> doGetPrevEntry( @PathVariable String pKey ) {
+        List<BfEntry> aEntryList = doGetEntryList();
+        BfEntry prevEntry = null;
+        for( BfEntry aNowEntry : aEntryList ) {
+            if ( aNowEntry.getKey().equals( pKey ) ) break;
+            prevEntry = aNowEntry;
+        }
+
+        return ( prevEntry != null ) ?
+                ResponseEntity.ok().body( prevEntry.getKey() )
+                :
+                ResponseEntity.notFound().build();
+    }
+
+    @GetMapping( API_NEXT_ENTRY_KEY )
+    public ResponseEntity<String> doGetNextEntry( @PathVariable String pKey ) {
+        List<BfEntry> aEntryList = doGetEntryList();
+        BfEntry nextEntry = null;
+        for( int aCount = aEntryList.size() - 1; aCount >= 0; aCount-- ) {
+            BfEntry aNowEntry = aEntryList.get( aCount );
+            if ( aNowEntry.getKey().equals( pKey ) ) break;
+            nextEntry = aNowEntry;
+        }
+
+        return ( nextEntry != null ) ?
+                ResponseEntity.ok().body( nextEntry.getKey() )
+                :
+                ResponseEntity.notFound().build();
     }
 
     @PostMapping( API_ENTRY_BEAN )

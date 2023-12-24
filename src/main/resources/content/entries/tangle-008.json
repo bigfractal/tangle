@@ -2,7 +2,7 @@
   "key": "tangle-008",
   "title": "Tangle 8 - Definition of Ready, Backlog, Gherkin",
   "author": "teefal",
-  "postStamp": "2023-11-29 06:00:00",
+  "postStamp": "2023-11-29 6:00",
   "thumb": "https://i.ytimg.com/vi/Qkn0k-r2YiA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMAV7wkHYD12t_vXfzzEnrDPJIcA",
   "body": "Starting with an explanation of DoR, Tim speeds through some backlog tickets, then writes acceptance criteria in the BDD style using Gherkin.",
   "youtube": "https://youtu.be/Qkn0k-r2YiA"

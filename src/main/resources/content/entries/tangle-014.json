@@ -2,7 +2,7 @@
   "key": "tangle-014",
   "title": "Tangle 14 - Getting to Green, GitHub & Docker",
   "author": "teefal",
-  "postStamp": "2023-12-13 06:00:00",
+  "postStamp": "2023-12-13 6:00",
   "thumb": "https://i.ytimg.com/vi/2wxGgBk9mOE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCB59EnOpgliNyNLuHajSm6Lelk_Q",
   "body": "Today’s about fixing bugs like whac-a-mole till the checkmarks all turn green. We then commit our first working code to GitHub and wire up deployment to Docker.",
   "youtube": "https://youtu.be/2wxGgBk9mOE"
