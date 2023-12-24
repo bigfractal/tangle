@@ -5,7 +5,7 @@ Feature: EntryView
       | key | title | author | body | postStamp |
       | yeats-second-coming | The Second Coming | Yeats | Things fall apart | 2023-12-14T6:00:00 |
       | rilke-letters-poet | Letters to a Young Poet | Rilke | love your solitude | 2023-12-15T6:00:00 |
-    When user navigates to "http://localhost:8080"
+    When user opens website
     And user clicks link with text "Episodes"
     Then view contains header with text "Episodes"
 

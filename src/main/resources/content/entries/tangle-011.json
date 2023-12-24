@@ -1,0 +1,9 @@
+{
+  "key": "tangle-011",
+  "title": "Tangle 11 - Cucumber, Automated Tests",
+  "author": "teefal",
+  "postStamp": "2023-12-06 06:00:00",
+  "thumb": "https://i.ytimg.com/vi/KRZlb5Jv04g/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7VVme19Fk4_2kjZ4V0R_C86akMA",
+  "body": "Writing behavior-driven Cucumber tests is the foundation for improved engineering excellence. Tim takes the Gherkin he wrote before and wires it up to Spring to import some test data.",
+  "youtube": "https://youtu.be/KRZlb5Jv04g"
+}

@@ -1,0 +1,9 @@
+{
+  "key": "tangle-013",
+  "title": "Tangle 13 - API Implementation, Red-green-refactor",
+  "author": "teefal",
+  "postStamp": "2023-12-11 06:00:00",
+  "thumb": "https://i.ytimg.com/vi/8TjOvr6-DoA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB73UaRf3XlVDewGmsl8p_eynZYLg",
+  "body": "Having failed so magnificently (and intentionally), we now write code that turns our tests green. Along the way, many disconnected tidbits are explained as they arise.",
+  "youtube": "https://youtu.be/8TjOvr6-DoA"
+}

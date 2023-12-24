@@ -54,4 +54,10 @@ public class BfNavTemplateFeature implements BfConstants {
         WebElement element = driver().findElement( By.id( pId ) );
         element.click();
     }
+
+    @And("view contains text {string}")
+    public void viewContainsText(String pMatchText ) {
+        WebElement element = driver().findElement( By.id( "mainView" ) );
+        assertTrue( element.getText().contains( pMatchText ) );
+    }
 }

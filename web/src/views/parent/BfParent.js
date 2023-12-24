@@ -8,7 +8,9 @@ export default function BfParent() {
     return (
         <>
             <BfNav />
-            <Outlet />
+            <main id="mainView">
+                <Outlet />
+            </main>
             <BfFooter />
         </>
     );

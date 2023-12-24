@@ -17,6 +17,9 @@ public class BfEntry {
     String title;
     String author;
     String body;
+    String postStamp;
+    String thumb;
+    String youtube;
 
     public void clearGenerated() {
         id = null;

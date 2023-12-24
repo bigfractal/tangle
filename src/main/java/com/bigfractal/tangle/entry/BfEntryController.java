@@ -1,13 +1,22 @@
 package com.bigfractal.tangle.entry;
 
 import com.bigfractal.tangle.env.BfConstants;
+import com.fasterxml.jackson.core.json.JsonReadFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,13 +28,31 @@ public class BfEntryController implements BfConstants {
     final
     BfEntryRepo entryRepo;
 
+    final String CONTENT_DIR = "content/entries";
+
+    @PostConstruct
+    public void readDataFromDir() throws IOException {
+        if ( entryRepo.count() > 0  ) return;
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File aDir = ResourceUtils.getFile( "classpath:" + CONTENT_DIR );
+        File[] aFileList = aDir.listFiles();
+        if ( aFileList == null ) return;
+
+        for( File aFile : aFileList ) {
+            String json = FileUtils.readFileToString( aFile, StandardCharsets.UTF_8 );
+            BfEntry entry = objectMapper.readValue( json, BfEntry.class );
+            entryRepo.save( entry );
+        }
+    }
+
     public BfEntryController(BfEntryRepo entryRepo) {
         this.entryRepo = entryRepo;
     }
 
     @GetMapping( API_ENTRY_LIST )
     public Collection<BfEntry> doGetEntryList() {
-        return entryRepo.findAll();
+        return entryRepo.findAll( Sort.by( Sort.Direction.ASC, "key" ) );
     }
 
     @GetMapping( API_ENTRY_BEAN_KEY )
