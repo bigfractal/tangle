@@ -11,7 +11,7 @@ export default function BfNav() {
         <header class="flex-auto w-full z-9999 bg-white py-7 lg:py-0 transition-all ease-in-out duration-300">
             <div class="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0 lg:flex items-center justify-between relative">
                 <div class="max-w-sm lg:w-3/12 flex items-center justify-between">
-                    <Button link id="appTitle" onClick={ () => navigate( "/" ) }> <img src="/images/tangleLogo.png" alt="Logo"/> </Button>
+                    <Button id="navLogo" link id="appTitle" onClick={ () => navigate( "/" ) }> <img src="/images/tangleLogo.png" alt="Logo"/> </Button>
 
                     <button id="menuToggler" aria-label="button for menu toggle" class="bg-red-500 lg:hidden block">
                       <span class="block relative cursor-pointer w-5.5 h-5.5">
@@ -40,16 +40,16 @@ export default function BfNav() {
                         <ul class="flex lg:items-center flex-col lg:flex-row gap-5 lg:pl-6 lg:gap-10">
 
                             <li className="nav__menu lg:py-6.5">
-                                <Button link onClick={ () => navigate( "/" ) } className="hover:text-dark">About</Button>
+                                <Button id="navAbout" link onClick={ () => navigate( "/" ) } className="hover:text-dark">About</Button>
                             </li>
                             <li className="nav__menu lg:py-6.5">
-                                <Button link onClick={ () => navigate( "/episodes" ) } className="hover:text-dark">Episodes</Button>
+                                <Button id="navEpisodes" link onClick={ () => navigate( "/episodes" ) } className="hover:text-dark">Episodes</Button>
                             </li>
                             <li class="nav__menu lg:py-6.5">
-                                <Button link onClick={ () => navigate( "/signup" ) } class="hover:text-dark">Signup</Button>
+                                <Button id="navSignup" link onClick={ () => navigate( "/signup" ) } class="hover:text-dark">Signup</Button>
                             </li>
                             <li className="nav__menu lg:py-6.5">
-                                <Button link onClick={ () => navigate( "/login" ) } className="hover:text-dark">Login</Button>
+                                <Button id="navLogin" link onClick={ () => navigate( "/login" ) } className="hover:text-dark">Login</Button>
                             </li>
                         </ul>
                     </nav>
