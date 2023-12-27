@@ -6,6 +6,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,12 +35,16 @@ public class BfEntryController implements BfConstants {
 
     final String CONTENT_DIR = "content/entries";
 
+    @Autowired
+    ResourceLoader resourceLoader;
+
     @PostConstruct
     public void readDataFromDir() throws IOException {
         if ( entryRepo.count() > 0  ) return;
 
         ObjectMapper objectMapper = new ObjectMapper();
-        File aDir = ResourceUtils.getFile( "classpath:" + CONTENT_DIR );
+        Resource resource = resourceLoader.getResource( "classpath:" + CONTENT_DIR );
+        File aDir = resource.getFile();
         File[] aFileList = aDir.listFiles();
         if ( aFileList == null ) return;
 
@@ -53,6 +62,13 @@ public class BfEntryController implements BfConstants {
     @GetMapping( API_ENTRY_LIST )
     public List<BfEntry> doGetEntryList() {
         return entryRepo.findAll( Sort.by( Sort.Direction.ASC, "key" ) );
+    }
+
+    @GetMapping( API_RECENT_ENTRY_LIST )
+    public List<BfEntry> doGetRecentEntryList() {
+        Pageable pageRequest = PageRequest.of( 0, 5, Sort.Direction.DESC, "postStamp" );
+        Page<BfEntry> page = entryRepo.findAll( pageRequest );
+        return page.toList();
     }
 
     @GetMapping( API_ENTRY_BEAN_KEY )

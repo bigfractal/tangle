@@ -10,7 +10,7 @@ export default function BfEntryCard( { entry }) {
         <div className="max-w-[400px] p-10">
             <div className="mb-6 overflow-hidden rounded-[10px] transition-all group-hover:scale-105" >
                 <a onClick={ () => navigate( entryLink ) }>
-                    <img src={ entry.thumb } alt="image" className="w-[336px]" />
+                    <img src={ entry.thumb } alt="image" className="h-[188px]" />
                 </a>
             </div>
 

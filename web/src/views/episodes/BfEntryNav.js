@@ -13,11 +13,11 @@ export default function BfEntryNav( { entryKey } ) {
     const [nextKey, setNextKey] = useState( [] );
 
     useEffect( () => {
-        fetch( "/api/v1/entry/prevEntry/key/" + entryKey )
+        fetch( "http://localhost:8080" + "/api/v1/entry/prevEntry/key/" + entryKey )
             .then( response => response.text() )
             .then( data => setPrevKey( data ) )
 
-        fetch( "/api/v1/entry/nextEntry/key/" + entryKey )
+        fetch( "http://localhost:8080" + "/api/v1/entry/nextEntry/key/" + entryKey )
             .then( response => response.text() )
             .then( data => setNextKey( data ) )
     } );

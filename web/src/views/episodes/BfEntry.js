@@ -6,25 +6,23 @@ export default function BfEntry( { entryKey }) {
     const [entry, setEntry] = useState( [] );
 
     const formatDate = ( dateText ) => {
-        console.log( "Passed datetext: " + dateText );
         let aDate = new Date( dateText );
-        console.log( "Date objecdt: " + aDate );
         return new Intl.DateTimeFormat( "en-US" ).format( aDate );
     }
 
     useEffect( () => {
-        fetch( "/api/v1/entry/entryBean/key/" + entryKey )
+        fetch( "http://localhost:8080" + "/api/v1/entry/entryBean/key/" + entryKey )
             .then( response => response.json() )
             .then( data => setEntry( data ) )
     }, [entryKey,entry,setEntry] );
 
     return (
-        <div className="xl:max-w-[770px] w-full">
+        <div className="xl:max-w-[760px] w-full">
             <BfEntryNav entryKey={ entryKey } />
             <img
                 src={ entry.thumb }
                 alt="blog"
-                className="w-[336px] mb-10"
+                className="h-[188px] mb-10"
             />
 
             <h1
