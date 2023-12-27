@@ -14,9 +14,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <BfParent />,
         children: [
-            { path: "/", element: <BfAbout /> },
+            { path: "/", element: <BfEpisodes /> },
             { path: "episodes", element: <BfEpisodes /> },
             { path: "episodes/:entryKey", element: <BfEpisodes /> },
+            { path: "/about", element: <BfAbout /> },
             { path: "signup", element: <BfSignup /> },
             { path: "login", element: <BfLogin /> },
         ],
