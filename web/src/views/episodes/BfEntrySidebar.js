@@ -10,7 +10,7 @@ export default function BfEntrySidebar() {
     const navigate = useNavigate();
 
     useEffect( () => {
-        fetch( "http://localhost:8080" + "/api/v1/entry/recentEntryList" )
+        fetch( "/api/v1/entry/recentEntryList" )
             .then( response => response.json() )
             .then( data => setEntryList( data ) )
     }, [] );

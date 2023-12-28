@@ -11,7 +11,7 @@ export default function BfEntry( { entryKey }) {
     }
 
     useEffect( () => {
-        fetch( "http://localhost:8080" + "/api/v1/entry/entryBean/key/" + entryKey )
+        fetch( "/api/v1/entry/entryBean/key/" + entryKey )
             .then( response => response.json() )
             .then( data => setEntry( data ) )
     }, [entryKey,entry,setEntry] );
@@ -19,11 +19,13 @@ export default function BfEntry( { entryKey }) {
     return (
         <div className="xl:max-w-[760px] w-full">
             <BfEntryNav entryKey={ entryKey } />
-            <img
-                src={ entry.thumb }
-                alt="blog"
-                className="h-[188px] mb-10"
-            />
+            <a href={ entry.youtube } target="_blank">
+                <img
+                    src={ entry.thumb }
+                    alt="blog"
+                    className="h-[188px] mb-10"
+                />
+            </a>
 
             <h1
                 className="font-bold text-lg sm:text-4xl lg:text-lg text-dark mb-2"

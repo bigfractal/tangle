@@ -8,7 +8,7 @@ export default function BfEntryList() {
     const [entryList, setEntryList] = useState( [] );
 
     useEffect( () => {
-        fetch( "http://localhost:8080" + "/api/v1/entry/entryList" )
+        fetch( "/api/v1/entry/entryList" )
             .then( response => response.json() )
             .then( data => setEntryList( data ) )
     }, [] );
