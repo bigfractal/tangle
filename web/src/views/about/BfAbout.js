@@ -5,7 +5,7 @@ import "../../images/tangleBannerShort.png"
 export default function BfAbout() {
     return (
 
-        <section id="home" class="rounded-b-[50px] relative overflow-hidden z-10 pb-10 pt-4">
+        <section id="sectionAbout" class="rounded-b-[50px] relative overflow-hidden z-10 pb-10 pt-4">
 
             <div class="mx-auto max-w-[1200px] px-4 sm:px-8 xl:px-0 relative z-1">
                 <div class="mx-auto max-w-[900px] ">

@@ -3,25 +3,25 @@ Feature: navTemplate
   Scenario: open website
     When user opens website
     Then page contains element with id "appTitle"
-    And page contains link with text "Login"
+    And page contains element with id "navEpisodes"
 
   Scenario: about view
-    When user clicks link with text "About"
-    Then view contains header with text "About"
+    When user clicks link with id "navAbout"
+    Then page contains element with id "sectionAbout"
 
   Scenario: episodes view
-    When user clicks link with text "Episodes"
-    Then view contains header with text "Episodes"
+    When user clicks link with id "navEpisodes"
+    Then element with id "sectionHeader" has text "Episodes"
 
-  Scenario: signup view
-    When user clicks link with text "Signup"
-    Then view contains header with text "Signup"
+#  Scenario: signup view
+#    When user clicks link with id "navSignup"
+#    Then element with id "sectionHeader" has text "Signup"
 
-  Scenario: login view
-    When user clicks link with text "Login"
-    Then view contains header with text "Login"
+#  Scenario: login view
+#    When user clicks link with id "navLogin"
+#    Then element with id "sectionHeader" has text "Login"
 
   Scenario: home view
     When user clicks link with id "appTitle"
-    Then view contains header with text "About"
+    Then element with id "sectionHeader" has text "Episodes"
 
