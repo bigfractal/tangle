@@ -9,6 +9,8 @@ import BfEpisodes from "./views/episodes/BfEpisodes";
 import BfSignup from "./views/account/BfSignup";
 import BfLogin from "./views/account/BfLogin";
 
+import "primereact/resources/themes/lara-light-blue/theme.css";
+
 const router = createBrowserRouter([
     {
         path: "/",

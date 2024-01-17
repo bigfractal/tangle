@@ -4,6 +4,6 @@
   "author": "teefal",
   "postStamp": "2023-12-18 6:00",
   "thumb": "https://i.ytimg.com/vi/RshIdbnzjTU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSiAFp7m4oeQqVqWBluOj8VzyfUA",
-  "body": "We switch from backend to frontend by writing two stories, complete with Gherkin, then wire up our web build using Webpack, Tailwind, Babel, and React.  We also better integrate JIra and Intellij.",
+  "chapterBody": "We switch from backend to frontend by writing two stories, complete with Gherkin, then wire up our web build using Webpack, Tailwind, Babel, and React.  We also better integrate JIra and Intellij.",
   "youtube": "https://youtu.be/RshIdbnzjTU"
 }

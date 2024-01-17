@@ -16,7 +16,9 @@ public class BfEntry {
     String key;
     String title;
     String author;
-    String body;
+    String chapterBody;
+    String videoBody;
+    String stepsBody;
     String postStamp;
     String thumb;
     String youtube;

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import BfEntryNav from "./BfEntryNav";
+import { TabView, TabPanel } from 'primereact/tabview';
+
 
 export default function BfEntry( { entryKey }) {
     const [entry, setEntry] = useState( [] );
@@ -53,7 +55,23 @@ export default function BfEntry( { entryKey }) {
             </div>
 
             <div className="mt-4">
-                { entry.body }
+                <TabView>
+                    <TabPanel header="Chapter">
+                        <div id="chapterBody" className="">
+                            { entry.chapterBody }
+                        </div>
+                    </TabPanel>
+                    <TabPanel header="Video">
+                        <div id="videoBody" className="">
+                            { entry.videoBody }
+                        </div>
+                    </TabPanel>
+                    <TabPanel header="Steps">
+                        <div id="stepsBody" className="">
+                            { entry.stepsBody }
+                        </div>
+                    </TabPanel>
+                </TabView>
             </div>
 
         </div>
