@@ -4,7 +4,9 @@ create table bf_entry
     key VARCHAR(36) unique,
     title VARCHAR(255),
     author VARCHAR(255),
-    body TEXT,
+    chapter_body TEXT,
+    video_body TEXT,
+    steps_body TEXT,
     post_stamp VARCHAR(255),
     thumb VARCHAR(255),
     youtube VARCHAR(255)
