@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import BfEntryNav from "./BfEntryNav";
 import { TabView, TabPanel } from 'primereact/tabview';
-
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function BfEntry( { entryKey }) {
     const [entry, setEntry] = useState( [] );
@@ -57,18 +58,24 @@ export default function BfEntry( { entryKey }) {
             <div className="mt-4">
                 <TabView>
                     <TabPanel header="Chapter">
-                        <div id="chapterBody" className="">
-                            { entry.chapterBody }
+                        <div id="chapterBody" className="markdown">
+                            <Markdown remarkPlugins={[remarkGfm]}>
+                                { entry.chapterBody }
+                            </Markdown>
                         </div>
                     </TabPanel>
                     <TabPanel header="Video">
-                        <div id="videoBody" className="">
-                            { entry.videoBody }
+                        <div id="videoBody" className="markdown">
+                            <Markdown remarkPlugins={[remarkGfm]}>
+                               { entry.videoBody }
+                            </Markdown>
                         </div>
                     </TabPanel>
                     <TabPanel header="Steps">
-                        <div id="stepsBody" className="">
-                            { entry.stepsBody }
+                        <div id="stepsBody" className="markdown">
+                            <Markdown remarkPlugins={[remarkGfm]}>
+                                { entry.stepsBody }
+                            </Markdown>
                         </div>
                     </TabPanel>
                 </TabView>

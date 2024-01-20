@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .markdown h1 {
+        @apply font-bold text-3xl leading-loose;
+    }
+
+    .markdown h2 {
+        @apply font-bold text-2xl leading-loose;
+    }
+
+    .markdown h3 {
+        @apply font-bold text-xl leading-loose;
+    }
+
+    .markdown ul {
+        @apply list-disc ml-5;
+    }
+
+    .markdown p {
+        @apply pb-3;
+    }
+
+    .markdown a {
+        @apply underline text-blue;
+    }
+
+}
