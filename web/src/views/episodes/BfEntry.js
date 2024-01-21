@@ -63,15 +63,19 @@ export default function BfEntry( { entryKey }) {
                     </TabPanel>
                     <TabPanel header="Video">
                         <div id="videoBody" className="">
-                            { entry.videoBody }
+                            <iframe className="w-full aspect-video"
+                                    src={ "https://www.youtube.com/embed/hpO-imy6Hnk?si=" + entry.youtube}
+                                    title={entry.title} frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen></iframe>
+                             <h4 className="pt-5 font-bold text-2xl">Transcript</h4>
+                            {entry.videoBody}
                         </div>
-                    </TabPanel>
-                    <TabPanel header="Steps">
-                        <div id="stepsBody" className="">
-                            { entry.stepsBody }
-                        </div>
-                    </TabPanel>
-                </TabView>
+                    </TabPanel> <TabPanel header="Steps">
+                    <div id="stepsBody" className="">
+                        {entry.stepsBody}
+                    </div>
+                </TabPanel> </TabView>
             </div>
 
         </div>
