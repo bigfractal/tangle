@@ -5,5 +5,5 @@
   "postStamp": "2023-12-15 6:00",
   "thumb": "https://i.ytimg.com/vi/SHNpYbVRtkI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBR3_nH5UNWo2OKBHXJvNJs6xdneA",
   "chapterBody": "We start by testing our API locally with Postman, then wire up all things AWS and EC2 to also deploy and test our image in the cloud. Apologies for my exhaustion at the end.  I need a weekend!",
-  "youtube": "https://youtu.be/SHNpYbVRtkI"
+  "youtube": "SHNpYbVRtkI"
 }

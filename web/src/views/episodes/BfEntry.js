@@ -67,6 +67,12 @@ export default function BfEntry( { entryKey }) {
                     <TabPanel header="Video">
                         <div id="videoBody" className="markdown">
                             <Markdown remarkPlugins={[remarkGfm]}>
+                                <iframe className="w-full aspect-video"
+                                        src={ "https://www.youtube.com/embed/hpO-imy6Hnk?si=" + entry.youtube}
+                                        title={entry.title} frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen></iframe>
+                                <h4 className="pt-5 font-bold text-2xl">Transcript</h4>
                                { entry.videoBody }
                             </Markdown>
                         </div>
