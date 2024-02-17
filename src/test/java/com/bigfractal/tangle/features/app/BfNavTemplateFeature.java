@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -65,5 +66,11 @@ public class BfNavTemplateFeature implements BfConstants {
     public void headerWithIdIs(String pId, String pText) {
         String text = driver().findElement( By.id( pId ) ).getText();
         assertTrue( text.contains( pText ) );
+    }
+
+    @Then("element with id {string} does not have text {string}")
+    public void headerWithIdIsNot(String pId, String pText) {
+        String text = driver().findElement( By.id( pId ) ).getText();
+        assertFalse( text.contains( pText ) );
     }
 }
